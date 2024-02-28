@@ -27,6 +27,8 @@ Light Mode and Dark Mode switching takes place based on system preference.
 # Feedback
 Any changes and suggestions are welcome.
 
+
+# Facilities available
 1. [x] Public Route
 2. [x] Login
 3. [x] Register
