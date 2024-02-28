@@ -1,3 +1,6 @@
+# Hosted At 
+https://blogspot-cpa6.onrender.com/
+
 # Welcome to the BlogSpot App
   It is a blogging app with facility to upload posts with image support, friend Lists can be created as well. 
   The users can mark their posts public or private. The private posts will be available to friends only.
