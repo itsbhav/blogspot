@@ -48,7 +48,7 @@ const PersistLogin = () => {
   } else if (isError) {
     //persist: yes, token: no
 
-    content = <Navigate to="/" state={{ from: pathname }} replace />;
+    content = <Navigate to="/login" state={{ from: pathname }} replace />;
   } else if (isSuccess && trueSuccess) {
     //persist: yes, token: yes
 
