@@ -12,7 +12,7 @@ import Prefetch from "./features/auth/Prefetch";
 import NewPost from "./components/NewPost"
 import EditUser from "./components/EditUser";
 function App() {
-  return (
+  return ( 
     <Routes>
       <Route path="/" element={<Layout />}>
         {/* public  */}
