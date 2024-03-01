@@ -47,7 +47,6 @@ const PersistLogin = () => {
     content = <PulseLoader color={"#FFF"} />;
   } else if (isError) {
     //persist: yes, token: no
-
     content = <Navigate to="/login" state={{ from: pathname }} replace />;
   } else if (isSuccess && trueSuccess) {
     //persist: yes, token: yes
