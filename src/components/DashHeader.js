@@ -36,11 +36,11 @@ const DashHeader = () => {
     navigate('/users')
   }
   useEffect(() => {
-    if (isSuccess) {
+    if (isSuccess||isError) {
       setPersist(false);
       setTimeout(() => navigate("/"), 1000);
     }
-  }, [isSuccess , setPersist, navigate]);
+  }, [isSuccess ,isError, setPersist, navigate]);
   let newPostButton = null;
   let logoutButton = null;
   let userButton = null;
