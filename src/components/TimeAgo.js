@@ -1,4 +1,4 @@
-import React,{memo} from "react";
+import React, { memo } from "react";
 import ReactTimeAgo from "react-time-ago";
 import TimeAgo from "javascript-time-ago";
 
@@ -12,7 +12,9 @@ const RTimeAgo = ({ timestamp }) => {
   return (
     <>
       Last Edited:{" "}
-      <ReactTimeAgo date={timestamp} locale="en-Us" timeStyle="round" />
+      {timestamp && (
+        <ReactTimeAgo date={timestamp} locale="en-Us" timeStyle="round" />
+      )}
     </>
   );
 };

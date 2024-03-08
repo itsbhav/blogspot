@@ -8,15 +8,17 @@ import PostAuthor from "./PostAuthor";
 import { memo } from "react";
 import Hero from "./Hero";
 import useTitle from "../hooks/useTitle";
+
 const UserPage = () => {
   const { id } = useParams();
-  useTitle('User Page')
-  const { user } = useGetUsersByIdQuery(id || "usersList", {
-    selectFromResult: ({ data }) => ({
+  useTitle("User Page");
+  const { user, isErrU, errU } = useGetUsersByIdQuery(id || "usersList", {
+    selectFromResult: ({ data, isError, error }) => ({
+      errU: error,
+      isErrU: isError,
       user: data?.entities[id],
     }),
   });
-
   const {
     data: posts,
     isLoading,
@@ -27,12 +29,21 @@ const UserPage = () => {
 
   let content = null;
 
-  if (isError) {
-    content = (
-      <p className="errmsg transparent_back">Error Getting Posts {error?.data?.message}</p>
+  if (isErrU) {
+    return (
+      <p className="errmsg transparent_back">
+        Error Getting User {errU?.data?.message}
+      </p>
     );
   }
 
+  if (isError) {
+    content = (
+      <p className="errmsg transparent_back">
+        Error Getting Posts {error?.data?.message}
+      </p>
+    );
+  }
   if (!user) return <PulseLoader color="#000" />;
 
   if (isLoading) content = <PulseLoader color="#000" />;
@@ -60,7 +71,7 @@ const UserPage = () => {
         <article className="dash-container-content">{content}</article>
         <article className="friendList" id="friendList">
           {user.friendList.length > 0 && (
-            <h3 className='marginlr'>Friend List</h3>
+            <h3 className="marginlr">Friend List</h3>
           )}
           {friendListContent}
         </article>

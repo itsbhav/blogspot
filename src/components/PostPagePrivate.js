@@ -18,7 +18,9 @@ const PostPagePrivate = ({ postId, search }) => {
 
   const { post } = useGetAllPostsQuery("postsList", {
     selectFromResult: ({ data }) => ({
-      post: data?.entities[postId],
+      post: data
+        ? data?.entities[postId] ?? "Not Found"
+        : data?.entities[postId],
     }),
   });
   const { id } = useAuth();
@@ -26,6 +28,8 @@ const PostPagePrivate = ({ postId, search }) => {
   const [deletePost, { isError: deleisError, error: delerror }] =
     useDeletePostMutation();
   let content = null;
+  if (post === "Not Found")
+    return <p className="errmsg transparent_back">No such Post Found</p>;
   if (!post) return <PulseLoader color="#000" />;
   const errClass = deleisError ? "errmsg" : "offscreen";
   const errContent = delerror?.data?.message ?? "";
@@ -55,7 +59,7 @@ const PostPagePrivate = ({ postId, search }) => {
       <FontAwesomeIcon icon={faTrash} />
     </button>
   );
- 
+
   content = !isEditing ? (
     <article className="post_article minWidth">
       <p className={errClass}>{errContent}</p>

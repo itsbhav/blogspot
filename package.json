@@ -18,7 +18,7 @@
     "react-time-ago": "^7.2.1"
   },
   "overrides": {
-    "cookie":"0.6.0"
+    "cookie": "0.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
