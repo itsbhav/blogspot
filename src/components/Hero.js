@@ -9,7 +9,7 @@ const Hero = ({ user }) => {
     }
   return (
     <main
-       className='hero-main'
+       className='hero-main basic-protect'
       >
         <div
           className='hero-main-div'
