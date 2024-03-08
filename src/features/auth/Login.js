@@ -105,7 +105,12 @@ const Login = () => {
         </form>
       </main>
       <footer className="login-footer">
-        <Link to="/">Back to Home</Link>
+        <div onClick={(e) => {
+          setPersist(false)
+          setTimeout(() => {
+            navigate('/')
+          }, 1000); 
+        }}>Back to Home</div>
         <div>
           Dont have an account? <Link to="/register">SignUp</Link>
         </div>
