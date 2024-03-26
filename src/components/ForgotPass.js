@@ -40,7 +40,7 @@ const ForgotPass = () => {
         </li>
         <li>
           In case, your account is not mail verified, please write to us at{" "}
-          <Link to={process.env.REACT_APP_OFFICIAL_MAIL} style={{ color: "black" }}>
+          <Link to={`mailto:${process.env.REACT_APP_OFFICIAL_MAIL}`} style={{ color: "black" }}>
             {process.env.REACT_APP_OFFICIAL_MAIL}
           </Link>
         </li>
