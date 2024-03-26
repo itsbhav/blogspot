@@ -47,6 +47,13 @@
   background: transparent;
 }
 
+.steps{
+  margin:1rem auto;
+  padding:2rem;
+  border: 2px solid black;
+  box-shadow: 2px 2px 2px #333;
+}
+
 .icon-button {
   width: 48px;
   height: 48px;
@@ -71,6 +78,9 @@
   margin: 0 auto;
 }
 
+.changehue:hover,.changehue:focus{
+ filter: invert(1) hue-rotate(180deg);
+}
 /* || GENERAL STYLES */
 
 body {
@@ -398,7 +408,6 @@ a:focus-visible {
   flex-flow: column nowrap;
   gap: 0.5em;
 }
-
 /* POST */
 
 .post_article {

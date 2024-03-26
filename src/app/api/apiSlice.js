@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { setCredentials } from '../../features/auth/authSlice';
 // import useAuth  from "../../hooks/useAuth";
 const baseQuery = fetchBaseQuery({
-    baseUrl: "https://blogspotapi-nxgc.onrender.com",
+    baseUrl: process.env.REACT_APP_BASEQUERY,
     credentials: 'include',
     prepareHeaders: (headers, { getState }) => {
         const token = getState().auth.token

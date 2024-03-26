@@ -1,14 +1,14 @@
 import React from "react";
 import { memo } from "react";
 import { Navigate } from "react-router-dom";
-import usePersist from "../hooks/usePersist";
 import { useLocation } from "react-router-dom";
 import { useGetRandomQuery } from "../features/posts/postsSlice";
 import PostPagePublic from "./PostPagePublic";
 import PulseLoader from "react-spinners/PulseLoader";
 import Footer from "./Footer";
+import useAuth from "../hooks/useAuth";
 const Public = () => {
-  const [persist] = usePersist();
+  const { username } = useAuth();
   const location = useLocation();
 
   const {
@@ -33,7 +33,7 @@ const Public = () => {
     const { ids } = posts;
     contentMain = ids.map((id) => <PostPagePublic key={id} postId={id} />);
   }
-  let content = !persist ? (
+  let content = !username?.length? (
     <>
       <main className="post-public">{contentMain}</main>
       <Footer />

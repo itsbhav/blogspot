@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 
-const PostAuthor = ({ imageUrl, displayname }) => {
+const PostAuthor = ({ imageUrl, displayname,verified }) => {
   return (
     <main className="author-main">
       <p>
@@ -12,7 +12,7 @@ const PostAuthor = ({ imageUrl, displayname }) => {
           />
         )}
       </p>
-      <p className="author-p">{displayname}</p>
+      <p className="author-p nowrap">{displayname }{ verified && <img src="/verified.png" alt="✔" width="20px"/>}</p>
     </main>
   );
 };

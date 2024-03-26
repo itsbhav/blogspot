@@ -18,6 +18,10 @@ The users have persitsed login facility with login in each 7 days.
 No risky data is stored in cookies, or states.
 The react and redux devtools are disabled in production.
 
+# Email Verification and Password Recovery
+You get golden tick if your account has a verified email.
+If you verify your email, you can recover your account, if you forget your password through mail.
+
 # LoginLimiter
  Login Limiter is used as middleware to mitigate DoS and DDoS
 
@@ -39,20 +43,22 @@ Any changes and suggestions are welcome.
 5. [x] Prefectching Of Data
 6. [x] Dash
 7. [x] Add Post
-8. [x] Edit Post
-9. [x] Delete Post
-10. [x] FriendList
-11. [x] Friend/UnFriend Request/Unrequest
-12. [x] Accept/Reject Request
-13. [x] View User Profile
-14. [x] Add Image
-15. [x] Edit User Info
-16. [x] Delete Account
-17. [x] Trusted Login for Long Duration
-18. [x] Header
-19. [x] Logout
-20. [x] search users
-21. [x] search posts
-22. [x] Default Dark/Light Mode based on System Preference
-23. [x] Mobile Friendly CSS
+8. [x] Email Verification
+9. [x] Account Recovery, if forgot Password
+10. [x] Edit Post
+11. [x] Delete Post
+12. [x] FriendList
+13. [x] Friend/UnFriend Request/Unrequest
+14. [x] Accept/Reject Request
+15. [x] View User Profile
+16. [x] Add Image
+17. [x] Edit User Info
+18. [x] Delete Account
+19. [x] Trusted Login for Long Duration
+20. [x] Header
+21. [x] Logout
+22. [x] search users
+23. [x] search posts
+24. [x] Default Dark/Light Mode based on System Preference
+25. [x] Mobile Friendly CSS
 

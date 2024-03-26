@@ -8,7 +8,6 @@ import PostAuthor from "./PostAuthor";
 import { memo } from "react";
 import Hero from "./Hero";
 import useTitle from "../hooks/useTitle";
-
 const UserPage = () => {
   const { id } = useParams();
   useTitle("User Page");
@@ -55,6 +54,7 @@ const UserPage = () => {
       <PostAuthor
         imageUrl={friend.imageUrl}
         displayname={friend.displayname || friend.username}
+        verified={ friend?.verified}
       />
     </Link>
   ));

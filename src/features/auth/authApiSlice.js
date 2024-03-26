@@ -27,6 +27,20 @@ export const authApiSlice = apiSlice.injectEndpoints({
                 }
             }
         }),
+        verify: builder.mutation({
+            query: ({email}) => ({
+                url: '/verify',
+                method: 'POST',
+                body:{mail:email}
+            }),
+        }),
+        recoverAcc:builder.mutation({
+            query: ({username}) => ({
+                url: '/secure',
+                method: 'POST',
+                body:{username}
+            }),
+        }),
         refresh: builder.mutation({
             query: () => ({
                 url: '/auth/refresh',
@@ -49,4 +63,6 @@ export const {
     useLoginMutation,
     useSendLogoutMutation,
     useRefreshMutation,
+    useVerifyMutation,
+    useRecoverAccMutation
 } = authApiSlice 

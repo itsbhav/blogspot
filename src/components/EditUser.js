@@ -70,10 +70,14 @@ const [err, setErr] = useState("");
 
   const onSaveUserClicked = async (e) => {
     if (canSave) {
+      let changePass = false;
+      if (password?.length) {
+        changePass=window.confirm("Do you really want to change your password?")
+      }
       await updateUser({
         username,
         displayname,
-        password,
+        password:(changePass)?password:"",
         about,
         imageUrl,
       });

@@ -12,7 +12,7 @@ const PostPagePublic = ({ postId }) => {
   return (
     <article className="post_article" style={{display:"flex",flexFlow:"column nowrap",marginBottom:"4rem"}}>
       <h2>{post?.title}</h2>
-      <p className="excerpt" style={{flexGrow:"1"}}>{post?.content.slice(0,200)}...</p>
+      <p className="excerpt" style={{ flexGrow: "1" }}>{post?.content.slice(0, 200)}{ post?.content?.length>200&&"..."}</p>
        <p className="postCredit">
       {post?.imageUrl && <img src={post?.imageUrl} alt="Post" className="public-width" />}
       </p>

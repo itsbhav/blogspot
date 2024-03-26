@@ -67,6 +67,7 @@ const PostPagePrivate = ({ postId, search }) => {
         <PostAuthor
           imageUrl={post.user?.imageUrl}
           displayname={post.user?.displayname || "Deleted User"}
+          verified={post.user?.verified}
         />
       </Link>
       <h2>

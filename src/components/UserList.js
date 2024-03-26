@@ -1,5 +1,6 @@
 import React,{memo} from "react";
 import useAuth from "../hooks/useAuth";
+import { Link } from "react-router-dom";
 import {
   useGetRecommendationsQuery,
   useGetUsersBySearchQuery,
@@ -42,6 +43,7 @@ const UserList = () => {
     setSelected("search")
     setSearchInput(e.target.searchInput.value);
   }
+  if(!id)return <p className="errmsg transparent_back">Unauthorized: Go To <span><Link to={"/login"} style={{ color: "black" }}> Login Page</Link></span></p>;
 
   if (!user) return <PulseLoader color="#000" />;
   let acceptreq = null
@@ -64,7 +66,7 @@ const UserList = () => {
 
   let recoContent = null
   if (recIsError) {
-    recoContent= (<p className="errmsg transparent_back">{ recError.data.message}</p>)
+    recoContent= (<p className="errmsg transparent_back">{ recError?.data?.message}</p>)
   }
   if (recSuccess) {
     const { ids } = usersInRecommendations
@@ -76,7 +78,7 @@ const UserList = () => {
    
   let searchContent = null
   if (searchIsError) {
-    searchContent=<p className="errmsg transparent_back"> Error Fetching Data { searchError.data.message}</p>
+    searchContent=<p className="errmsg transparent_back"> Error Fetching Data { searchError?.data?.message}</p>
   }
   if (searchSuccess) {
     const { ids } = usersInSearch

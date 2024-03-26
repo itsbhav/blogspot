@@ -11,6 +11,8 @@ import PersistLogin from "./features/auth/PersistLogin";
 import Prefetch from "./features/auth/Prefetch";
 import NewPost from "./components/NewPost"
 import EditUser from "./components/EditUser";
+import VerifyMail from './components/VerifyMail'
+import ForgotPass from "./components/ForgotPass";
 function App() {
   return ( 
     <Routes>
@@ -34,6 +36,8 @@ function App() {
               <Route path=":id" element={<UserPage />} />
             </Route>
           </Route>
+          <Route path="verificationPage" element={<VerifyMail />} />
+          <Route path="recoverPassword" element={<ForgotPass/>}/>
         </Route>
       </Route>
     </Routes>

@@ -40,7 +40,7 @@ const DashBoard = () => {
 
   const [search, setSearch] = useState("");
 
-  if (!id) return <p className="errmsg transparent_back">Unauthorized</p>;
+  if (!id) return <p className="errmsg transparent_back">Unauthorized: Go To <span><Link to={"/login"} style={{ color: "black" }}> Login Page</Link></span></p>;
 
   const handleFriendReq = async (friendId) => {
     await handleReq(friendId);
@@ -69,6 +69,7 @@ const DashBoard = () => {
         <PostAuthor
           imageUrl={friend.imageUrl}
           displayname={friend.displayname || friend.username}
+          verified={friend?.verified}
         />
       </Link>
       <button
@@ -100,7 +101,7 @@ const DashBoard = () => {
   return (
     <>
       {/* <DashHeader /> */}
-      {!pathname.includes("posts") && <Hero user={user} />}
+      {!pathname.includes("posts") && <Hero user={user} showVerify={ true} />}
       <input id="search"type="text" role="searchbox" placeholder="Search Posts..." value={search} onChange={handleSearch} className="searchbox"/>
       <article className="dash-container">
         <article className="dash-container-content">

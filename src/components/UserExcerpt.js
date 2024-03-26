@@ -114,7 +114,7 @@ const UserExcerpt = ({ user }) => {
         alt={user.displayname}
         className="user-excerpt-image user-excerpt-div"
       /></Link>
-      <div className="marginlr user-excerpt-div">{user.displayname}</div>
+      <div className="marginlr user-excerpt-div">{user.displayname }{ user?.verified && <img src="/verified.png" alt="✔" width="20px"/>}</div>
       <div className="marginlr user-excerpt-div">{user.username}</div>
       <div
        className="user-excerpt-div"
